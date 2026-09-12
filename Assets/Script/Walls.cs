@@ -25,7 +25,14 @@ public class Walls : MonoBehaviour
         if (player == null)
             return;
 
-            player.Hp -= 10;
+        player.Hp -= 10;
+        UIManager.instance.ShowNotiText($"Hurt -10\nHP : {player.Hp}");
+
+        if (player.Hp <= 0)
+        {
+            player.Hp = 0;
+            UIManager.instance.ShowNotiText($"Game Over\nPoint : {player.Point}");
+        }
     }
 
     private void OnCollisionExit(Collision collision)
