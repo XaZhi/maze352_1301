@@ -25,13 +25,15 @@ public class Walls : MonoBehaviour
         if (player == null)
             return;
 
-        player.Hp -= 10;
-        UIManager.instance.ShowNotiText($"Hurt -10\nHP : {player.Hp}");
+        player.Hp -= 5;
+        UIManager.instance.ShowNotiText($"Hurt -5\nHP : {player.Hp}");
 
         if (player.Hp <= 0)
         {
             player.Hp = 0;
             UIManager.instance.ShowNotiText($"Game Over\nPoint : {player.Point}");
+            Time.timeScale = 0f;
+            UIManager.instance.ShowHideRestartButton(true);
         }
     }
 
