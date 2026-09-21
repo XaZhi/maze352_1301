@@ -25,4 +25,9 @@ public class MainMenu : MonoBehaviour
     {
         adjustPanel.SetActive(flag);
     }
+
+    public void SetVolume(float volume)
+    {
+        AudioManager.instance.AdjustMasterVolume(volume);
+    }
 }
