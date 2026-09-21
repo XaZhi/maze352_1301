@@ -22,5 +22,7 @@ public class Goal : MonoBehaviour
             return;
 
         UIManager.instance.ShowNotiText($"You WIN!\nPoint : {player.Point}");
+
+        AudioManager.instance.PlaySFX(0);
     }
 }

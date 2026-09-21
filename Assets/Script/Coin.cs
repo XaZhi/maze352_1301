@@ -12,5 +12,7 @@ public class Coin : MonoBehaviour
         player.Point += 10;
         UIManager.instance.ShowNotiText($"Get Coin +10\nPoint : {player.Point}");
         Destroy(gameObject);
+
+        AudioManager.instance.PlaySFX(1);
     }
 }
